@@ -1,0 +1,388 @@
+@turbine
+  compress:1
+  plugins: css3, performance, legacy, load, fontface
+
+@load url($_FILEPATH/constants.cssp)
+@load url($_FILEPATH/font-face.cssp)
+
+body
+  background: linear-gradient(top, #000000, #6BA2DA) fixed
+  //background: $transparentGradient
+
+a
+  color: white
+  text-decoration:none
+a:hover
+  background: $menuHover
+  //background: hsla(210, 57%, 71%, 0.5)
+  border-radius: 5px
+
+hr
+  margin: 2px auto
+  width: 80%
+  color: $colorRef
+  background: $colorRef
+  clear: both; 
+  float: none; 
+  height: 2px;
+  border-color: $colorRef
+  border: none
+
+#menukar-header
+  height:25px
+  padding:0 10px 5px
+  color:white
+  border-width: 0px 1px 1px
+  border-style: solid
+  border-color: $transparentBorder
+  border-radius:0 0 15px 15px
+  box-shadow:2px 2px 11px 3px $shadow
+  background: $transparentGradient
+  .Menukar-logo
+    text-align: center
+    position: relative
+    font-size: 1.2em
+    height: 0px
+    font-family: AMERSN
+    span
+      font-size: 0.8em
+  a
+    height:20px
+    float:left
+    padding:0 8px 5px
+    margin:5px 5px 0 5px
+  a:hover
+    border-radius: 5px 5px 0px 0px
+    //background-color:rgba(255, 255, 255, 0.2)
+    //background-color: $transparentHover
+    background: $menuHover
+
+#menukar-header-option
+  float:right
+
+.button-header
+  float: left
+  height:20px
+  margin-top:3px
+
+.button-option
+  margin:5px 2px 0 !important
+  padding:0 5px 5px !important
+
+.text-header
+  margin:1px 0 0 5px
+  float:right
+  font-family: AMERSN
+
+#menukar-content
+  margin-top:20px
+
+#menukar-fil:hover
+  .header-fil
+    border-width:2px 1px 0 1px
+    border-color: $colorRef $transparentBorder $transparentBorder
+
+#menukar-fil
+  border-radius:15px
+  box-shadow: 2px 2px 11px 3px $shadow
+  label.error
+    color: $colorRef
+    font-size: 0.9em
+    margin-left: 5px
+  .header-fil
+    height:30px
+    border-width:2px 1px 0 1px
+    border-style:solid
+    border-color: $transparentBorder
+    color: white
+    border-radius: 15px 15px 0 0
+    background: $transparentGradient
+    //background:linear-gradient(top, #474747, #000000)
+    .logo-menu
+      float: left
+      height: 20px
+      margin: 5px 0 0 10px
+    span
+      display: inline-block;
+      font-size: 1.5em;
+      margin: -3px 0 0 10px;
+      text-transform: uppercase;
+      font-family: AMERSN
+    .header-search
+      float: right
+      height: 100%
+      width: 300px
+      padding: 0 5px 0 0
+      .header-champ
+        float: right
+        border: 0 none
+        height: 17px
+        font-size: 0.8em
+        margin: 5px 0 0
+        padding: 2px 3px
+        color: #4D4D4D
+        text-shadow: 1px 1px 1px #4F4F4F
+        border-radius: 10px
+        box-shadow: -1px -2px 1px #2F2F2F
+        background: linear-gradient(top, #C9C9C9, #EFEFEF)
+      .header-champ.selected
+          color: #4784BF
+      .header-submit
+        border-radius: 10px
+        float: right
+        text-align: center
+        background: $submitNeutre
+        width: 25px
+        height: 19px
+        color: white
+        font-weight: bold
+        margin: 5px 0 0 5px
+        padding: 2px 2px 0
+      .header-submit:hover
+        background: $menuHover
+  .content-fil
+    float: left
+    border-width:0 1px 0 1px
+    border-style:solid
+    border-color: $transparentBorder
+    background: $transparent
+  .footer-fil
+    height:8px
+    border-width:0px 1px 1px 1px
+    border-style:solid
+    border-color: $transparentBorder
+    border-radius: 0 0 15px 15px
+    background: $transparent
+
+.body-fil
+  float: left
+  margin:0px 5px
+  border-radius: 8px
+  //background: linear-gradient(top, #DCDCDC, #FEFEFE)
+  background: $contentBackground
+  .bloc-left
+    float: left
+    width: 200px
+    height: 100%
+    border-width: 1px 1px 1px 5px
+    border-style: solid
+    border-color: $colorRef #666666 $colorRef $colorRef
+    border-radius: 8px 0 0 8px
+    box-sizing: border-box
+    background: hsla(222, 21%, 88%, 1)
+    .menukar-cat-title
+      color: $grayText
+      text-align: left
+      padding-left: 5px
+      font-family: AMERSN
+    .menukar-cat-list
+      .menukar-cat-sub
+        color: black
+        list-style-type: none
+        padding-left: 20px
+        cursor: pointer
+        font-size: 0.9em
+      .menukar-cat-sub:hover
+        color: white
+        background: $menuHover
+        border-radius: 0
+  .bloc-right
+    float: right
+    width: 788px
+    height: 100%
+    overflow: hidden
+    border-width: 1px
+    border-style: solid
+    border-color: $colorRef $colorRef $colorRef #666666
+    border-radius: 0 8px 8px 0
+    box-sizing: border-box
+    .bloc-ajax
+      .news-bloc
+        float: left
+        width: 778px
+        margin: 10px 5px 10px
+        .zone-com
+          border-top: 1px dashed $newsLink
+          margin-top: 10px
+          padding-top: 5px
+          .zone-com-post
+            padding: 5px
+            background: #5F5F5F
+            border-radius: 10px
+            color: white
+            text-shadow: 1px 1px 1px #000000
+            fieldset
+              border: 1px solid #9F9F9F
+              border-radius: 10px
+              padding: 5px
+            legend
+              color: $colorRef
+              font-weight: bold
+              padding: 0 5px
+              text-shadow: 1px 1px 1px #2F2F2F
+            textarea
+              width: 750px
+              height: 100px
+            .input-com
+              border: 0 none
+              height: 17px
+              font-size: 0.8em
+              margin: 5px 0 0
+              padding: 2px 3px
+              color: #4D4D4D
+              width: 250px
+              border-radius: 10px
+              box-shadow: -1px -2px 1px #2F2F2F
+              background: linear-gradient(top, #C9C9C9, #EFEFEF)
+            .email-com
+              margin-left: 14px
+            .text-com
+              border: 0 none
+              font-size: 1em
+              margin: 5px 0 0
+              padding: 2px 3px
+              color: #4D4D4D
+              border-radius: 10px
+              box-shadow: -1px -2px 1px #2F2F2F
+              background: linear-gradient(top, #C9C9C9, #EFEFEF)
+            .send-com
+              border-radius: 10px
+              text-align: center
+              background: linear-gradient(top, #C9C9C9, #7F7F7F)
+              height: 25px
+              color: white
+              font-weight: bold
+              margin: 5px 0 0 5px
+              padding: 0px 5px
+              border-width: 0
+              cursor: pointer
+              text-shadow: 1px 1px 1px #4F4F4F
+            .send-com:hover
+              background: $menuHover
+        .news-title
+          a
+            float: left
+            color: $grayText !important
+            font-weight: bold
+            font-size: 1.4em
+            cursor: pointer
+            width: 730px
+            font-family: AMERSN
+          a:hover
+            color: #959B9F !important
+            background: none !important
+        .news-favoris
+          float: right
+          height: 25px
+          width: 20px
+          cursor: pointer
+          margin-right: -5px
+          border-radius: 10px
+          border-width: 1px 0 1px 1px
+          border-style: solid
+          border-color: hsl(207, 4%, 55%)
+          background: $arianeBackground
+          border-radius: 10px 0 0 10px
+          .news-favoris-img
+            float: left;
+            margin: 3px 0 0 5px;
+            width: 20px;
+        .news-favoris:hover
+          padding-right: 10px
+          background: $menuHover
+          border-color: hsl(205, 9%, 73%)
+        .news-date
+          color: $grayText
+          float: left
+          font-size: 0.7em
+          margin: -7px 0 0 10px
+        .news-content
+          font-size: 0.9em
+          text-align: justify
+          margin: 10px 0
+        .news-auteur
+          color: $grayText
+          float: right
+          font-size: 0.9em
+        .news-bottom
+          width: 100%
+          height: 26px
+          color: white
+          margin: 0 0 0 -5px
+          padding: 4px 5px 0
+          background: $arianeBackground
+          .news-tag
+            float: left
+            font-size: 0.9em
+            span
+              font-weight: bold
+            .news-tags
+              padding: 0 5px
+              margin: 0 2px
+              font-weight: normal
+              cursor: pointer
+              color: $colorNewsBottom !important
+              border-radius: 10px
+              border-width: 1px
+              border-style: solid
+              border-color: hsl(207, 4%, 55%)
+            .news-tags:hover
+              background: $menuHoverInv
+              color: white !important
+          .news-com
+            float: right
+            font-size: 0.9em
+            span
+              font-weight: bold
+      a
+        color: $newsLink !important
+      a:hover
+        //color: $newsLinkHover !important
+        color: white !important
+    .fil-ariane
+      height: 28px
+      background: $arianeBackground
+      color: black
+      border-radius: 0 7px 0 0
+      padding: 2px 0 0 10px
+      border-width: 0 0 1px 0
+      border-style: solid
+      border-color: hsl(207, 4%, 55%)
+      .fil-link
+        font-family: AMERSN
+      .arrow-white
+        background: transparent url('/images/icones/petit/arrow.png') top left
+        display: inline-block
+        height: 20px
+        width: 22px
+        position: relative
+        top: 3px
+        margin-top: -1px
+      span
+        color: black
+        padding: 0 10px
+        cursor: pointer
+        border-radius: 10px
+        border-width: 1px
+        border-style: solid
+        border-color: hsl(207, 4%, 55%)
+        background: $arianeBackground
+      span:hover
+        color: white
+        background: $menuHoverInv
+        border-color: hsl(205, 9%, 73%)
+      span.selected
+        color: white
+        cursor: default
+        background: $menuHoverInv
+        border-color: hsl(205, 9%, 73%)
+  
+  
+  
+  
+  
+  
+  
+  
+  
+

@@ -1,0 +1,44 @@
+<?php
+  $db = $this->db;
+  
+  include(APPLICATION_PATH."/views/helpers/42code.php");
+  $request = $this->request;
+  
+  if($request) {
+    foreach ($request as $key => $value) {
+      if($value['ID_N'] != 42 && $value['Ligne_N'] == 0) {
+        if($key != 0) { echo "<hr/>"; }
+        ?>
+        <div class="news-bloc" id="news-<?php echo $value['ID_N']; ?>">
+          <div class="news-title" id="<?php echo $value['ID_N']; ?>"><a href="/cat/<?php echo $value['Cat_N']; ?>/article/<?php echo $value['ID_N']; ?>"><?php echo $value['Nom_N'] ?></a></div>
+          <div class="news-favoris" id="favoris-<?php echo $value['ID_N']; ?>"><img class="news-favoris-img" src="/images/icones/grand/favoris.png"/></div>
+          <div class="clear"></div>
+          <div class="news-date"><?php echo $value['Date_N']; ?></div>
+          <div class="clear"></div>
+          <div class="news-content">
+            <?php echo bbcode($value['Text_N'], $db); ?>
+          </div>
+          <div class="clear"></div>
+          <div class="news-auteur"><?php echo $value['Auteur_N']; ?></div>
+          <div class="clear"></div>
+          <div class="news-bottom">
+            <?php
+              $tag = split("[|]", $value['Tag_N']);
+            ?>
+            <div class="news-tag"><span>Tags : </span>
+              <?php
+                foreach($tag as $valuetag) {
+                  echo '<span class="news-tags" id="tag-'.$valuetag.'">'.$valuetag.'</span>';
+                }
+              ?>
+            </div>
+            <div class="news-com"><span>Commentaires : </span>voir / cacher</div>
+          </div>
+        </div>
+        <?php
+      }
+    }
+  } else {
+    echo "No result !";
+  }
+?>

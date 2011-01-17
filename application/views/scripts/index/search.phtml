@@ -1,0 +1,113 @@
+<?php
+  $db = $this->db;
+  
+  include(APPLICATION_PATH."/views/helpers/42code.php");
+  $request = $this->request;
+  
+  if($request) {
+    foreach ($request as $key => $value) {
+      if($value['ID_N'] != 42 && $value['Ligne_N'] == 0) {
+        if($key != 0) { echo "<hr/>"; }
+        ?>
+        <div class="news-bloc" id="news-<?php echo $value['ID_N']; ?>">
+          <div class="news-title" id="<?php echo $value['ID_N']; ?>"><?php echo $value['Nom_N'] ?></div>
+          <div class="news-favoris" id="favoris-<?php echo $value['ID_N']; ?>"><img class="news-favoris-img" src="/images/icones/grand/favoris.png"/></div>
+          <div class="clear"></div>
+          <div class="news-date"><?php echo $value['Date_N']; ?></div>
+          <div class="clear"></div>
+          <div class="news-content">
+            <?php echo bbcode($value['Text_N'], $db); ?>
+          </div>
+          <div class="clear"></div>
+          <div class="news-auteur"><?php echo $value['Auteur_N']; ?></div>
+          <div class="clear"></div>
+          <div class="news-bottom">
+            <?php
+              $tag = split("[|]", $value['Tag_N']);
+            ?>
+            <div class="news-tag"><span>Tags : </span>
+              <?php
+                foreach($tag as $valuetag) {
+                  echo '<span class="news-tags">'.$valuetag.'</span>';
+                }
+              ?>
+            </div>
+            <div class="news-com"><span>Commentaires : </span>voir / cacher</div>
+          </div>
+          <div class="clear"></div>
+          <div class="zone-com" id="zone-com-id-<?php echo $value['ID_N']; ?>">
+            <div class="zone-com-post">
+            <form method="post" action="" id="commentForm">
+              <fieldset>
+                <legend>Ajoute ton commentaires</legend>
+                  Pseudo <input name="pseudo" type="text" class="auteur-com input-com" />
+                  <div class="clear"></div>
+                  Email <input name="email" type="text" class="email-com input-com" />
+                  <div class="clear"></div>
+                  Commentaire
+                  <div class="clear"></div>
+                <textarea name="commentaire" class="text-com" ></textarea>
+                <div class="clear"></div>
+                <input class="send-com" id="<?php echo $value['ID_N']; ?>" type="submit" value="Poster"/>
+              </fieldset>
+            </form>
+            <script>
+              $(document).ready(function(){
+                $("#commentForm").validate({
+                  debug: true,
+                  rules: {
+                    pseudo: {
+                      required: true,
+                      rangelength: [2, 150]
+                    },
+                    email: {
+                      required: true,
+                      email: true
+                    },
+                    commentaire: {
+                      required: true,
+                      rangelength: [2, 300]
+                    }
+                  },
+                  messages: {
+                    pseudo: {
+                      required: "Please specify your pseudo.",
+                    },
+                    email: {
+                      required: "Please specify your email.",
+                    },
+                    commentaire: {
+                      required: "Please enter your comments.",
+                    }
+                  },
+                  submitHandler: function() {
+                    var pseudoForm      = $("input.auteur-com").val();
+                    var emailForm       = $("input.email-com").val();
+                    var commentForm     = $("textarea.text-com").val();
+                    var commentId       = $("input.send-com").attr('id');
+                    
+                    var dataString     = 'pseudo='+ pseudoForm;
+                    dataString         += '&email='+ emailForm;
+                    dataString         += '&comment='+ commentForm;
+                    dataString         += '&id='+ commentId;
+                    
+                    $.ajax({
+                      type    : "POST",
+                      url     : "/index/addcommentaire",
+                      data    : dataString,
+                      success: function(msg){
+                        
+                      }
+                    });
+                  }
+                });
+              });
+            </script>
+            </div>
+          </div>
+        </div>
+        <?php
+      }
+    }
+  }
+?>

@@ -1,0 +1,16 @@
+@constants
+  colorRef: #6BA2DA
+  shadow: hsla(300, 0%, 20%, 0.7)
+  transparent: hsla(0, 0%, 24%, 1)
+  transparentBorder: hsla(0, 0%, 40%, 1)
+  transparentHover: hsl(211, 49%, 63%)
+  menuHover: linear-gradient(top, #6BA2DA, #2571BD)
+  menuHoverInv: linear-gradient(top, #2571BD, #6BA2DA)
+  contentBackground: hsla(0, 0%, 90%, 1)
+  transparentGradient: linear-gradient(top, #5F5F5F, #3D3D3D)
+  arianeBackground: linear-gradient(top, #C9C9C9, #99999A)
+  grayText: hsla(208, 6%, 40%, 1)
+  newsLink: #5E8FC0
+  newsLinkHover: #3A5877
+  colorNewsBottom: #273B50
+  submitNeutre: linear-gradient(top, #C9C9C9, #5F5F5F)

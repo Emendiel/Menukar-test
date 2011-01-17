@@ -1,0 +1,84 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Menukar - 42</title>
+    <?php echo $this->headLink()->appendStylesheet('/blueprint/src/reset.css') ?>
+    <?php echo $this->headLink()->appendStylesheet('/blueprint/src/grid.css') ?>
+    <?php echo $this->headLink()->appendStylesheet('/turbine/css.php?files=css3/main.cssp') ?>
+    <script type="text/javascript" src="http://www.lqdn.fr/cornerpopup/cornerpopup.js"></script>
+  </head>
+  <body>
+    <script src="/js/jquery/1.4.4/jquery.min.js"></script>
+    <script src="/js/jquery/jquery.validate.min.js"></script>
+    <div class="container">
+      <?php echo $this->partial('partials/menu.phtml', null); ?>
+      <div id="menukar-content">
+        <div id="menukar-fil">
+          <div class="header-fil">
+            <img src="/images/icones/grand/home.png" title="Home"/ class="logo-menu">
+            <span>Actualités</span>
+            <div class="header-search">
+                <input class="header-submit" type="image" value="Ok"/>
+                <input class="header-champ" type="text" value="Recherche..." />
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="content-fil">
+            <div class="body-fil">
+              <div class="bloc-left">
+                <?php
+                $db = Zend_Db::factory('Pdo_Mysql', array(
+                  'host'     => '127.0.0.1',
+                  'username' => 'root',
+                  'password' => 'gfqa4av3',
+                  'dbname'   => 'Menukar-test'
+                ));
+                
+                $request = $db->fetchAll("SELECT * FROM menu_cat ORDER BY Ordre_Cat ASC", 2);
+                $tableau = array();
+                
+                foreach ($request as $value) {
+                    echo "<div class='menukar-cat-title'>".$value['Nom_Cat']."</div>";
+                    echo "<div class='menukar-cat-list'>";
+                    
+                    $request2 = $db->fetchAll("SELECT * FROM sm WHERE Cat_SM=".$value['ID_Cat']." ORDER BY Ordre_SM ASC", 2);
+                    foreach ($request2 as $value2) {
+                      $tableau[$value2['ID_SM']] = $value2['Nom_SM'];
+                      echo "<a style='display: block' href='/cat/".$value2['ID_SM']."' id='".$value2['ID_SM']."' class='menukar-cat-sub'>".$value2['Nom_SM']."</a>";
+                    }
+                    echo "</div>";
+                  }
+                  ?>
+                <div class="menukar-cat-title">La Quadrature du net</div>
+                <center>
+                  <a href="http://www.laquadrature.net/soutien" title="Je soutiens La Quadrature du Net" alt="Je soutiens La Quadrature du Net"><img src="http://www.laquadrature.net/images/banner-supportLQDN2.gif" alt="Support LQDN banner 2" /></a>
+                </center>
+              </div>
+              <div class="bloc-right">
+                <div class="fil-ariane">
+                  <span class="fil-link home selected" id="home">Home</span>
+                  <?php if($this->cat != 0 && !empty($tableau[$this->cat])) { ?>
+                  <div class="arrow-white category" ></div>
+                  <span class="fil-link category"><?php echo $tableau[$this->cat]; ?></span>
+                  <?php } ?>
+                  <div class="arrow-white article" style="display: none"></div>
+                  <span class="fil-link article" id="42" style="display: none">Article</span>
+                </div>
+                <div class="bloc-ajax">
+                  <?php echo $this->layout()->content; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="footer-fil"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/menukar/menukar.js"></script>
+    <script src="/js/menukar/menukarApi.js"></script>
+    
+  </body>
+</html>
+

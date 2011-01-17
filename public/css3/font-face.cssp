@@ -1,0 +1,15 @@
+@font-face
+  font-family: 'JacksFont'
+  src: url('../fonts/JacksFont')
+  
+@font-face
+  font-family: 'zachary'
+  src: url('../fonts/zachary')
+  
+@font-face
+  font-family: 'mabella'
+  src: url('../fonts/mabella')
+  
+@font-face
+  font-family: 'AMERSN'
+  src: url('../fonts/AMERSN')
