@@ -26,7 +26,8 @@ class IndexController extends Zend_Controller_Action
         
         $this->view->request = 0;
         
-        $this->view->article = 0 || $article;
+        $article = (is_numeric($article)) ? $article : 0;
+        $this->view->article = $article;
         
         if(empty($cat) || $cat == "home") {
           $this->view->request = $this->db->fetchAll("SELECT * FROM news WHERE Ligne_N=0 ORDER BY `news`.`ID_N` DESC LIMIT 5", 2);

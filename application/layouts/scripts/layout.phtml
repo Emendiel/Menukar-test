@@ -57,13 +57,29 @@
               </div>
               <div class="bloc-right">
                 <div class="fil-ariane">
-                  <span class="fil-link home selected" id="home">Home</span>
                   <?php if($this->cat != 0 && !empty($tableau[$this->cat])) { ?>
-                  <div class="arrow-white category" ></div>
-                  <span class="fil-link category"><?php echo $tableau[$this->cat]; ?></span>
+                    <a href="/"><span class="fil-link home" id="home">Home</span></a>
+                    <div class="arrow-white category" ></div>
+                    <?php if($this->article != 0) { ?>
+                      <a href="/cat/<?php echo $this->cat; ?>"><span class="fil-link category"><?php echo $tableau[$this->cat]; ?></span></a>
+                      <div class="arrow-white article"></div>
+                      <a href="/cat/<?php echo $this->cat; ?>/article/<?php echo $this->article; ?>">
+                        <span class="fil-link article selected" id="42">
+                          <?php
+                            if(strlen($this->request[0]["Nom_N"]) > 40) {
+                              echo substr($this->request[0]["Nom_N"], 0, 39)."...";
+                            } else {
+                              echo $this->request[0]["Nom_N"];
+                            }
+                          ?>
+                        </span>
+                      </a>
+                    <?php } else { ?>
+                      <a href="/cat/<?php echo $this->cat; ?>"><span class="fil-link category selected"><?php echo $tableau[$this->cat]; ?></span></a>
+                    <?php } ?>
+                  <?php } else { ?>
+                    <a href="/"><span class="fil-link home selected" id="home">Home</span></a>
                   <?php } ?>
-                  <div class="arrow-white article" style="display: none"></div>
-                  <span class="fil-link article" id="42" style="display: none">Article</span>
                 </div>
                 <div class="bloc-ajax">
                   <?php echo $this->layout()->content; ?>
