@@ -5,6 +5,8 @@ class ErrorController extends Zend_Controller_Action
 
     public function errorAction()
     {
+        $this->_helper->layout->setLayout('layout-error');
+        
         $errors = $this->_getParam('error_handler');
         
         if (!$errors) {
@@ -19,12 +21,15 @@ class ErrorController extends Zend_Controller_Action
         
                 // 404 error -- controller or action not found
                 $this->getResponse()->setHttpResponseCode(404);
-                $this->view->message = 'Page not found';
+                $this->view->code = 404;
+                $this->view->message = 'La Terre est actuellement introuvable, nous la recherchons activement !';
+                // Base rebelle not found
                 break;
             default:
                 // application error
                 $this->getResponse()->setHttpResponseCode(500);
-                $this->view->message = 'Application error';
+                $this->view->code = 500;
+                $this->view->message = 'La Terre a été détruite, veuillez ne pas paniquer !';
                 break;
         }
         

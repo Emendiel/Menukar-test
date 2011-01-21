@@ -98,6 +98,8 @@ hr
     border-radius: 15px 15px 0 0
     background: $transparentGradient
     //background:linear-gradient(top, #474747, #000000)
+    a:hover
+      background: transparent
     .logo-menu
       float: left
       height: 20px
@@ -141,6 +143,8 @@ hr
       .header-submit:hover
         background: $menuHover
   .content-fil
+    extends: "?border-box"
+    width: 1000px
     float: left
     border-width:0 1px 0 1px
     border-style:solid
@@ -153,8 +157,24 @@ hr
     border-color: $transparentBorder
     border-radius: 0 0 15px 15px
     background: $transparent
-
+.body-fil.error-page
+  extends: "?border-box", "?word-wrap"
+  width: 988px
+  float: left
+  margin:0px 5px
+  border-radius: 8px
+  padding: 5px
+  .debug-error
+    extends: "?border-box"
+    font-size: 0.8em
+    h3
+      font-weight: bold
+      font-size: 1.1em
+    pre
+      overflow-x: auto
 .body-fil
+  extends: "?border-box"
+  width: 988px
   float: left
   margin:0px 5px
   border-radius: 8px
@@ -379,6 +399,20 @@ hr
         background: $menuHoverInv
         border-color: hsl(205, 9%, 73%)
   
+.error-msg
+  padding: 5px
+  background: #5F5F5F
+  border-radius: 10px
+  color: white
+  text-shadow: 1px 1px 1px #000000
+  text-align: center
+  box-shadow: 3px 3px 5px #2F2F2F;
+  margin: 10px 5px 20px
+  h2
+    font-size: 3em
+    font-weight: bold
+    color: $colorRef
+    text-shadow: 2px 2px 2px #2F2F2F
   
   
   

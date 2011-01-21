@@ -14,3 +14,10 @@
   newsLinkHover: #3A5877
   colorNewsBottom: #273B50
   submitNeutre: linear-gradient(top, #C9C9C9, #5F5F5F)
+  
+?border-box
+  box-sizing:border-box
+
+?word-wrap
+  display: inline-block
+  word-wrap: break-word
