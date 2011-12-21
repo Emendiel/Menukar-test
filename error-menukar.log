@@ -166,3 +166,68 @@
 [Fri Jan 21 15:27:49 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function getMessage() on a non-object in /home/david/perso/Menukar-refact/application/views/scripts/error/error.phtml on line 14
 [Fri Jan 21 17:14:06 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/david/perso/Menukar-refact/application/controllers/ErrorController.php on line 25
 [Fri Jan 21 17:14:07 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/david/perso/Menukar-refact/application/controllers/ErrorController.php on line 25
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_connect(): Unknown MySQL server host 'mysql5-7.perso' (1) in /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php on line 9
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:0
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP   2. include() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:2
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP   3. mysql_connect() /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php:9
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_select_db(): Access denied for user 'www-data'@'localhost' (using password: NO) in /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php on line 10
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:0
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP   2. include() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:2
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP   3. mysql_select_db() /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php:10
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php on line 10
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:0
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP   2. include() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:2
+[Tue Dec 20 12:16:56 2011] [error] [client 127.0.0.1] PHP   3. mysql_select_db() /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php:10
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_connect(): Unknown MySQL server host 'mysql5-7.perso' (1) in /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php on line 9, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Stack trace:, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:0, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   2. include() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:2, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   3. mysql_connect() /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php:9, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_select_db(): Access denied for user 'www-data'@'localhost' (using password: NO) in /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php on line 10, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Stack trace:, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:0, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   2. include() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:2, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   3. mysql_select_db() /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php:10, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php on line 10, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Stack trace:, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:0, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   2. include() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:2, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   3. mysql_select_db() /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php:10, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_query(): Access denied for user 'www-data'@'localhost' (using password: NO) in /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php on line 20, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Stack trace:, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:0, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   2. mysql_query() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:20, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_query(): A link to the server could not be established in /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php on line 20, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Stack trace:, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:0, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   2. mysql_query() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:20, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php on line 21, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP Stack trace:, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:0, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:02 2011] [error] [client 127.0.0.1] PHP   2. mysql_fetch_array() /home/emendiel/Code/Menukar-test/public/admin42BO/co42BO.php:21, referer: http://menukar.dev/admin42BO/42BO.php
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_connect(): Unknown MySQL server host 'mysql5-7.perso' (1) in /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php on line 9
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:0
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP   2. include() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:2
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP   3. mysql_connect() /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php:9
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_select_db(): Access denied for user 'www-data'@'localhost' (using password: NO) in /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php on line 10
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:0
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP   2. include() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:2
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP   3. mysql_select_db() /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php:10
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php on line 10
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:0
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP   2. include() /home/emendiel/Code/Menukar-test/public/admin42BO/42BO.php:2
+[Tue Dec 20 12:17:05 2011] [error] [client 127.0.0.1] PHP   3. mysql_select_db() /home/emendiel/Code/Menukar-test/public/admin42BO/entete42BO.php:10
+[Wed Dec 21 14:35:04 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected T_STRING in /home/emendiel/Code/Menukar-test/application/controllers/IndexController.php on line 88, referer: http://menukar.dev/
+[Wed Dec 21 14:35:05 2011] [error] [client 127.0.0.1] PHP Stack trace:, referer: http://menukar.dev/
+[Wed Dec 21 14:35:05 2011] [error] [client 127.0.0.1] PHP   1. {main}() /home/emendiel/Code/Menukar-test/public/index.php:0, referer: http://menukar.dev/
+[Wed Dec 21 14:35:05 2011] [error] [client 127.0.0.1] PHP   2. Zend_Application->run() /home/emendiel/Code/Menukar-test/public/index.php:27, referer: http://menukar.dev/
+[Wed Dec 21 14:35:05 2011] [error] [client 127.0.0.1] PHP   3. Zend_Application_Bootstrap_Bootstrap->run() /home/emendiel/Code/Menukar-test/library/Zend/Application.php:366, referer: http://menukar.dev/
+[Wed Dec 21 14:35:05 2011] [error] [client 127.0.0.1] PHP   4. Zend_Controller_Front->dispatch() /home/emendiel/Code/Menukar-test/library/Zend/Application/Bootstrap/Bootstrap.php:97, referer: http://menukar.dev/
+[Wed Dec 21 14:35:05 2011] [error] [client 127.0.0.1] PHP   5. Zend_Controller_Dispatcher_Standard->dispatch() /home/emendiel/Code/Menukar-test/library/Zend/Controller/Front.php:954, referer: http://menukar.dev/
+[Wed Dec 21 14:35:05 2011] [error] [client 127.0.0.1] PHP   6. Zend_Controller_Dispatcher_Standard->loadClass() /home/emendiel/Code/Menukar-test/library/Zend/Controller/Dispatcher/Standard.php:262, referer: http://menukar.dev/

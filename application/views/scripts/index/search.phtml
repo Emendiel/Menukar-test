@@ -28,12 +28,13 @@
             <div class="news-tag"><span>Tags : </span>
               <?php
                 foreach($tag as $valuetag) {
-                  echo '<span class="news-tags">'.$valuetag.'</span>';
+                  echo '<span class="news-tags" id="tag-'.$valuetag.'">'.$valuetag.'</span>';
                 }
               ?>
             </div>
-            <div class="news-com"><span>Commentaires : </span>voir / cacher</div>
+            <div class="news-com"><span>Commentaires : </span><span class="news-com-toogle" rel="<?php echo $value['ID_N']; ?>">toogle</span></div>
           </div>
+          <?php include(APPLICATION_PATH.'/views/helpers/commentaire.phtml'); ?>
         </div>
         <?php
       }

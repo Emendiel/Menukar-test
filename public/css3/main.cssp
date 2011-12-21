@@ -226,6 +226,33 @@ hr
           margin-top: 10px
           padding-top: 5px
           float: left
+          display: none
+          .zone-com-view
+            padding: 5px
+            background: #999999
+            border-radius: 0 0 10px 10px
+            color: white
+            margin: 0 auto
+            width: 95%
+            text-shadow: 1px 1px 1px #000000
+            border-width:0px 1px 3px 1px
+            border-style: solid
+            border-color: $colorRef
+            .comment-bloc-user
+              margin-top: 5px
+              .comment-bloc-info
+                font-size: 0.8em
+                .comment-bloc-author
+                  font-size: 1.2em
+                  font-weight: bold
+                .comment-bloc-date
+                  float: right
+              .comment-bloc-text
+                background-color: #5F5F5F
+                border: 1px solid grey
+                border-radius: 5px 5px 5px 5px
+                font-size: 0.8em
+                padding: 5px
           .zone-com-post
             padding: 5px
             background: #5F5F5F
@@ -327,16 +354,17 @@ hr
           font-size: 0.9em
         .news-bottom
           width: 100%
-          height: 26px
           color: white
+          float: left
           margin: 0 0 0 -5px
-          padding: 4px 5px 0
+          padding: 4px 5px 5px
           background: $arianeBackground
           .news-tag
             float: left
             font-size: 0.9em
             span
               font-weight: bold
+              float: left
             .news-tags
               padding: 0 5px
               margin: 0 2px

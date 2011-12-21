@@ -1,54 +1,54 @@
 <div class="clear"></div>
 <div class="zone-com" id="zone-com-id-<?php echo $value['ID_N']; ?>">
   <div class="zone-com-post">
-  <form method="post" action="" id="commentForm">
+  <form method="post" action="" class="commentForm" id="commentForm-<?php echo $value['ID_N']; ?>">
     <fieldset>
       <legend>Ajoute ton commentaires</legend>
-        Pseudo <input name="pseudo" type="text" class="auteur-com input-com" />
+        Pseudo <input name="pseudo<?php echo $value['ID_N']; ?>" type="text" class="auteur-com-<?php echo $value['ID_N']; ?> input-com" />
         <div class="clear"></div>
-        Email <input name="email" type="text" class="email-com input-com" />
+        Email <input name="email<?php echo $value['ID_N']; ?>" type="text" class="email-com-<?php echo $value['ID_N']; ?> input-com" />
         <div class="clear"></div>
         Commentaire
         <div class="clear"></div>
-      <textarea name="commentaire" class="text-com" ></textarea>
+      <textarea name="commentaire<?php echo $value['ID_N']; ?>" class="text-com text-com-<?php echo $value['ID_N']; ?>" ></textarea>
       <div class="clear"></div>
-      <input class="send-com" id="<?php echo $value['ID_N']; ?>" type="submit" value="Poster"/>
+      <input class="send-com send-com-<?php echo $value['ID_N']; ?>" type="submit" value="Poster"/>
     </fieldset>
   </form>
   <script>
     $(document).ready(function(){
-      $("#commentForm").validate({
+      $("#commentForm-<?php echo $value['ID_N']; ?>").validate({
         debug: true,
         rules: {
-          pseudo: {
+          pseudo<?php echo $value['ID_N']; ?>: {
             required: true,
             rangelength: [2, 150]
           },
-          email: {
+          email<?php echo $value['ID_N']; ?>: {
             required: true,
             email: true
           },
-          commentaire: {
+          commentaire<?php echo $value['ID_N']; ?>: {
             required: true,
             rangelength: [2, 300]
           }
         },
         messages: {
-          pseudo: {
+          pseudo<?php echo $value['ID_N']; ?>: {
             required: "Please specify your pseudo.",
           },
-          email: {
+          email<?php echo $value['ID_N']; ?>: {
             required: "Please specify your email.",
           },
-          commentaire: {
+          commentaire<?php echo $value['ID_N']; ?>: {
             required: "Please enter your comments.",
           }
         },
         submitHandler: function() {
-          var pseudoForm      = $("input.auteur-com").val();
-          var emailForm       = $("input.email-com").val();
-          var commentForm     = $("textarea.text-com").val();
-          var commentId       = $("input.send-com").attr('id');
+          var pseudoForm      = $("input.auteur-com-<?php echo $value['ID_N']; ?>").val();
+          var emailForm       = $("input.email-com-<?php echo $value['ID_N']; ?>").val();
+          var commentForm     = $("textarea.text-com-<?php echo $value['ID_N']; ?>").val();
+          var commentId       = <?php echo $value['ID_N']; ?>;
           
           var dataString     = 'pseudo='+ pseudoForm;
           dataString         += '&email='+ emailForm;
@@ -60,7 +60,7 @@
             url     : "/index/addcommentaire",
             data    : dataString,
             success: function(msg){
-              
+              ma.generateComment(<?php echo $value['ID_N']; ?>, false);
             }
           });
         }
@@ -68,4 +68,5 @@
     });
   </script>
   </div>
+  <div id="zone-com-view-<?php echo $value['ID_N']; ?>" class="zone-com-view"></div>
 </div>

@@ -8,9 +8,9 @@ class IndexController extends Zend_Controller_Action
     {
         /* Initialize action controller here */
         $this->db = Zend_Db::factory('Pdo_Mysql', array(
-        'host'     => '127.0.0.1',
+        'host'     => 'localhost',
         'username' => 'root',
-        'password' => 'gfqa4av3',
+        'password' => 'root',
         'dbname'   => 'Menukar-test'
         ));
     }
@@ -71,18 +71,24 @@ class IndexController extends Zend_Controller_Action
         }
     }
     
-    public function commentaireAction()
+    public function getCommentaireAction()
     {
       $this->_helper->layout->disableLayout();
-      $this->view->db = $this->db;
+      $this->getRequest()->setParam('format', 'json');
+      $contextSwitch = $this->_helper->getHelper('contextSwitch');
+      $contextSwitch->addActionContext($this->getRequest()->getActionName(), array('json'));
+      $contextSwitch->initContext();
+      
+      $success = false;
+      
       $news = $this->getRequest()->getParam('news', null);
       
       if($news) {
         $this->view->request = $this->db->fetchAll("SELECT * FROM commentaires WHERE ID_N='".$news."' ORDER BY `commentaires`.`ID_C` DESC", 2);
-        return true;
-      } else {
-        return false;
+        $success = true;
       }
+      
+      $this->view->success = $success;
     }
     
     public function addcommentaireAction()

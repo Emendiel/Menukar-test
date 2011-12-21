@@ -32,9 +32,9 @@
                 }
               ?>
             </div>
-            <div class="news-com"><span>Commentaires : </span>voir / cacher</div>
-            <?php include(APPLICATION_PATH.'/views/helpers/commentaire.phtml'); ?>
+            <div class="news-com"><span>Commentaires : </span><span class="news-com-toogle" rel="<?php echo $value['ID_N']; ?>">toogle</span></div>
           </div>
+          <?php include(APPLICATION_PATH.'/views/helpers/commentaire.phtml'); ?>
         </div>
         <?php
       }

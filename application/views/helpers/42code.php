@@ -10,7 +10,7 @@
     
     foreach ($emote as $emoteview)
     {
-      $text=str_replace( $emoteview['code_e'], '<img src="'.$emoteview['image_e'].'" />',$text);
+      $text=str_replace( $emoteview['code_e'], '<img src="/'.$emoteview['image_e'].'" />',$text);
     }
     
     /**

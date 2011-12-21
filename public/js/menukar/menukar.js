@@ -51,4 +51,10 @@ $(document).ready(function(){
       }
     });
   });
+  
+  $(".news-com-toogle").live("click", function(e) {
+    ma.generateComment($(e.currentTarget).attr("rel"), true);
+  });
+  
+  
 });
